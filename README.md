@@ -29,7 +29,7 @@ Some tasks require generalizing to unseen objects (d,g,h), or multi-step sequenc
 
 ## Installation
 
-**Step 1.** Recommended: install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) with Python 3.7.
+**Step 1.** Recommended: install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) with Python 3.9.
 
 ```shell
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -43,10 +43,12 @@ conda init
 
 ```shell
 cd ~/ravens
-conda create --name ravens python=3.7 -y
+conda create --name ravens python=3.9 -y
 conda activate ravens
 sudo apt-get update
 sudo apt-get -y install gcc libgl1-mesa-dev
+pip install pip-upgrader
+pip-upgrade requirements.txt --skip-package-installation
 pip install -r requirements.txt
 python setup.py install --user
 ```
@@ -64,8 +66,8 @@ As an example for Ubuntu 18.04:
 
 ```shell
 ./oss_scipts/install_cuda.sh  #  For Ubuntu 16.04 and 18.04.
-sudo apt install gcc libgl1-mesa-dev python3.8-venv
-python3.8 -m venv ./venv
+sudo apt install gcc libgl1-mesa-dev python3.9-venv
+python3.9 -m venv ./venv
 source ./venv/bin/activate
 pip install -U pip
 pip install scikit-build
