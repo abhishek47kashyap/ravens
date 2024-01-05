@@ -49,7 +49,7 @@ sudo apt-get update
 sudo apt-get -y install gcc libgl1-mesa-dev
 pip install pip-upgrader
 pip-upgrade requirements.txt --skip-package-installation
-pip install -r requirements.txt
+pip install -r requirements.txt --no-cache-dir
 python setup.py install --user
 ```
 
